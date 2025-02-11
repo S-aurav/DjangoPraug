@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>About</h1>
+    <h3>{{ my_text|capfirst|upper}}</h3>
+    <p> description about </p>
+
+    
+
+    <p>{{my_text}}, {{my_number}}, {{my_list}}</p>
+
+    <ul>
+        {% for abc in my_list %}
+            {% if abc == 321 %}
+                <li> {{forloop.counter}} - {{abc|add:22}}</li>
+            {% elif abc == "Abc" %}
+                <li>This is not the key</li>
+            {% else %}
+                <li>{{ forloop.counter }} - {{ abc }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    
+{% endblock content %}
